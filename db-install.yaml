@@ -3,12 +3,10 @@
   become: yes
   vars:
     login_host: db.somustack.online
-  
   vars_prompt:
   - name: mysql_root_password
     prompt: Please Enter Root Password
     privacy: false
-  
   tasks:
   - name: install the mysql server
     ansible.builtin.dnf:
