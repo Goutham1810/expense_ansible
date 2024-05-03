@@ -1,0 +1,27 @@
+- name: Configuring FrontEnd
+  hosts: frontend
+  become: yes
+  vars:
+  
+  tasks:
+  - name: Installing NGNIX
+    ansible.builtin.dnf:
+      name: ngnix
+      state: latest
+  
+  - name: Restart the NGNIX
+    ansible:builtin.service:
+      name: ngnix
+      state: started
+      enabled: yes
+  
+  - name: Removing default Files
+    ansible.builtin.file:
+      path: /usr/share/nginx/html
+      state: absent
+  
+  - name: Creating HTML Directory
+    ansible.builtin.file:
+      path: /usr/share/nginx/html
+      state: directory
+
