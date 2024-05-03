@@ -63,7 +63,7 @@
       name: all
   
   - name: Restart the backend services
-    ansible.buitin.service:
+    ansible.builtin.service:
       name: backend
       state: started
       enabled: yes
