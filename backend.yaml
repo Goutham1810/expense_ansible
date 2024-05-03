@@ -24,7 +24,7 @@
    - name: create expense user
     ansible.builtin.user:
       name: expense
-      
+
   - name: Creating sub-directories
     ansible.builtin.file:
       path: /app
@@ -67,7 +67,3 @@
       name: backend
       state: started
       enabled: yes
-
-
-
-
