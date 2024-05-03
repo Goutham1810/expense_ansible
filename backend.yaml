@@ -21,10 +21,10 @@
     - nodejs
     - mysql
   
-  - name: Creating the expense user
-    ansible.buitlin.user:
+   - name: create expense user
+    ansible.builtin.user:
       name: expense
-
+      
   - name: Creating sub-directories
     ansible.builtin.file:
       path: /app
