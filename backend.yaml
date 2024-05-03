@@ -61,3 +61,9 @@
       target: /app/schema/backend.sql
       state: import
       name: all
+  
+  - name: Restart the backend services
+    ansible.buitin.service:
+      name: backend
+      state: started
+      enabled: yes
